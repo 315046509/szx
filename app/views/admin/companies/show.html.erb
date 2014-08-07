@@ -1,0 +1,111 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_one_cities_path %>"> 世界游管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= hotline_admin_companies_path %>">公司旅游路线管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      公司旅游路线
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 公司旅游路线</h2>
+    </div>
+    <div class="box-content">
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">旅游标题：
+            <%= @hotline.title %>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">包团价格：
+            <%= @hotline.price %>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">旅游图片：
+            <%= image_tag @hotline.avatar.url(:show) %>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">旅游内容：
+            <%= @hotline.description %>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">参考行程：
+            <div class="form-actions">
+              <%= @hotline.xingcheng.html_safe %>
+            </div>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">费用说明：
+            <div class="form-actions">
+              <%= @hotline.feiyongshuoming.html_safe %>
+            </div>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">温馨提示：
+            <div class="form-actions">
+              <%= @hotline.wenxintishi.html_safe %>
+            </div>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+
+      <li class="lineitem">
+        <dl class="info fn-left">
+          <dd class="desc">预订提示：
+            <div class="form-actions">
+              <%= @hotline.yudingtishi.html_safe %>
+            </div>
+          </dd>
+          <div class="clear"></div>
+        </dl>
+      </li>
+    </div>
+  </div>
+  <!--/span-->
+</div>

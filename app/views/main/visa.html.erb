@@ -1,0 +1,214 @@
+<%= render "comment/hear" %>
+<div class="center qianzheng">
+<div class="channel_side fn-left">
+  <div class="new_gonglue">
+    <h3>攻略宝典</h3>
+    <% @gonglues.each do |q| %>
+        <ul class="gonglue_list">
+          <li><a href="<%= show_raider_main_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+        </ul>
+    <% end %>
+  </div>
+
+  <div class="new_gonglue">
+    <h3>热销线路</h3>
+    <% @hotdoors.each do |q| %>
+        <ul class="sell_list">
+          <li>・ <a href="<%= gentuan_destination_one_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+        </ul>
+    <% end %>
+  </div>
+</div>
+
+<div class="side_right fn-right">
+  <div class="crumbs">
+    当前位置：<a href="<%= root_path %>">网站首页</a> &gt; <a href="<%= visa_main_index_path %>">签证</a>
+  </div>
+
+  <div class="big_banner">
+    <img src="../images/pics/visa_ad.jpg">
+  </div>
+
+  <div class="qz_country">
+    <ul>
+      <li><a>全部</a></li>
+      <li><a>亚洲签证</a></li>
+      <li><a>欧洲签证</a></li>
+      <li><a>非洲签证</a></li>
+      <li><a>澳洲签证</a></li>
+      <li><a>美洲签证</a></li>
+    </ul>
+  </div>
+  <div class="qz_list">
+    <p class="qz_p">亚洲签证</p>
+
+    <div class="qz_title">
+      <table>
+        <tbody>
+        <tr>
+          <td width="240">国家及签证类别</td>
+          <td width="120">市场价</td>
+          <td width="114">详情</td>
+          <td width="137">点击联系客服</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qz_contents">
+      <table>
+        <tbody>
+        <% @category_1_city.each do |q| %>
+            <tr>
+              <td width="260"><a href="<%= visa_show_main_path(q) %>"><%= q.title %></a></td>
+              <td width="140">￥<%= q.price %>起</td>
+              <td width="140"><a href="<%= visa_show_main_path(q) %>">详情</a></td>
+              <td width="137">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">Contact us</a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="qz_list">
+    <p class="qz_p">欧洲签证</p>
+
+    <div class="qz_title">
+      <table>
+        <tbody>
+        <tr>
+          <td width="240">国家及签证类别</td>
+          <td width="120">市场价</td>
+          <td width="114">详情</td>
+          <td width="137">点击联系客服</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qz_contents">
+      <table>
+        <tbody>
+        <% @category_2_city.each do |q| %>
+            <tr>
+              <td width="260"><a href="<%= visa_show_main_path(q) %>"><%= q.title %></a></td>
+              <td width="140">￥<%= q.price %>起</td>
+              <td width="140"><a href="<%= visa_show_main_path(q) %>">详情</a></td>
+              <td width="137">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">Contact us</a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="qz_list">
+    <p class="qz_p">非洲签证</p>
+
+    <div class="qz_title">
+      <table>
+        <tbody>
+        <tr>
+          <td width="240">国家及签证类别</td>
+          <td width="120">市场价</td>
+          <td width="114">详情</td>
+          <td width="137">点击联系客服</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qz_contents">
+      <table>
+        <tbody>
+        <% @category_3_city.each do |q| %>
+            <tr>
+              <td width="260"><a href="<%= visa_show_main_path(q) %>"><%= q.title %></a></td>
+              <td width="140">￥<%= q.price %>起</td>
+              <td width="140"><a href="<%= visa_show_main_path(q) %>">详情</a></td>
+              <td width="137">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">Contact us</a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="qz_list">
+    <p class="qz_p">澳洲签证</p>
+
+    <div class="qz_title">
+      <table>
+        <tbody>
+        <tr>
+          <td width="240">国家及签证类别</td>
+          <td width="120">市场价</td>
+          <td width="114">详情</td>
+          <td width="137">点击联系客服</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qz_contents">
+      <table>
+        <tbody>
+        <% @category_4_city.each do |q| %>
+            <tr>
+              <td width="260"><a href="<%= visa_show_main_path(q) %>"><%= q.title %></a></td>
+              <td width="140">￥<%= q.price %>起</td>
+              <td width="140"><a href="<%= visa_show_main_path(q) %>">详情</a></td>
+              <td width="137">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">Contact us</a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="qz_list">
+    <p class="qz_p">美洲签证</p>
+
+    <div class="qz_title">
+      <table>
+        <tbody>
+        <tr>
+          <td width="240">国家及签证类别</td>
+          <td width="120">市场价</td>
+          <td width="114">详情</td>
+          <td width="137">点击联系客服</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qz_contents">
+      <table>
+        <tbody>
+        <% @category_5_city.each do |q| %>
+            <tr>
+              <td width="260"><a href="<%= visa_show_main_path(q) %>"><%= q.title %></a></td>
+              <td width="140">￥<%= q.price %>起</td>
+              <td width="140"><a href="<%= visa_show_main_path(q) %>">详情</a></td>
+              <td width="137">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">Contact us</a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

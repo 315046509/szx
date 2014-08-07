@@ -1,0 +1,93 @@
+<%= render "comment/hear" %>
+<div class="center">
+  <div class="channel_side fn-left">
+    <div class="side_hot">
+      <h3 class="side_title">旅游导航</h3>
+
+      <div class="line_list">
+        <dl>
+          <dt class="t">
+            <a>港澳旅游</a>
+          </dt>
+          <% @category_1_city.each do |q| %>
+              <dd class="dd">
+                <a target="_blank" href="<%= main_path(q) %>" title="<%= q.title %>"><%= q.title %></a>
+              </dd>
+          <% end %>
+          <div class="clear"></div>
+        </dl>
+
+        <dl>
+          <dt class="t">
+            <a>出境旅游</a>
+          </dt>
+          <% @category_2_city.each do |q| %>
+              <dd class="dd">
+                <a target="_blank" href="<%= main_path(q) %>" title="<%= q.title %>"><%= q.title %></a>
+              </dd>
+          <% end %>
+          <div class="clear"></div>
+        </dl>
+
+        <dl>
+          <dt class="t">
+            <a>国内旅游</a>
+          </dt>
+
+          <% @category_3_city.each do |q| %>
+              <dd class="dd">
+                <a target="_blank" href="<%= main_path(q) %>" title="<%= q.title %>"><%= q.title %></a>
+              </dd>
+          <% end %>
+          <div class="clear"></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="side_right fn-right">
+    <div class="hk_hot travel_line">
+      <h2 class="travel_Hd">
+        <span class="travel_Hd_type travel_line_type">&nbsp;旅游线路</span>
+        <span class="travel_Hd_msg">豪华出境 专业无忧！</span>
+      </h2>
+
+      <div class="newChannel_Bd">
+        <div class="newChannel_list visible" id="hk_div1">
+          <ul id="change_li">
+            <!--           产品              -->
+            <% @lunbos.each do |q| %>
+                <li class="lineitem">
+                  <div class="img fn-left">
+                    <a title="<%= q.title %>" target="_blank" href="/">
+                      <%= image_tag q.avatar.url %>
+                    </a>
+                  </div>
+
+                  <dl class="info fn-left">
+                    <dt class="t">
+                      <a title="<%= q.title %>" target="_blank" href="/"><%= q.title %></a>
+                    </dt>
+                    <dd class="desc"></dd>
+                    <dd class="moredesc">
+                      <span>满意度：<span class="n">99%</span></span>
+                      <span class="pin"><span class="n">1006</span>人点赞</span>
+                    </dd>
+                  </dl>
+                  <div class="detail fn-right">
+                    <span class="sup">双重优惠</span>
+                    <p class="price"><span class="u">￥</span><span class="n"><%= q.price %></span>起</p>
+                    <span class="d"><em class="dsnum">50</em></span>
+                    <span class="s"><em class="dsnum">200</em></span>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+            <% end %>
+            <!--           产品end              -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

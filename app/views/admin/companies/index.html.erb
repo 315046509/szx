@@ -1,0 +1,35 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      公司旅游管理
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title>
+      <h2><i class="icon-list-alt"></i> 公司旅游管理</h2>
+    </div>
+    <div class="box-content">
+      <div class="form-actions">
+        <div style="float: left">
+          <%= link_to '公司旅游路线', hotline_admin_companies_path, :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <div style="float: left">
+          <%= link_to '公司包团列表', customized_packages_admin_companies_path, :class => "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/span-->
+</div><!--/row-->

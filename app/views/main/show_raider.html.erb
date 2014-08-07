@@ -1,0 +1,31 @@
+<div class="center">
+  <div class="con_left fn-left">
+    <div class="gonglue_title"><%= @gonglue.title %></div>
+    <p class="gonglue_info">
+      发布时间：<span><%= my_datetime_format @gonglue.created_at %></span>
+      来源：<span>海外旅行社</span>
+      作者：<span>海外旅行社</span>
+    </p>
+
+    <div class="gonglue_main">
+      <div class="gonglue_summury">
+        感谢关注海外旅行社，有你们的支持，我们将做的更加完美！
+      </div>
+      <p></p>
+
+      <p><strong><%= @gonglue.description.html_safe %></strong></p>
+    </div>
+  </div>
+
+  <div class="con_right fn-right">
+    <div class="top_sell">
+      <h3>攻略宝典</h3>
+      <% @gonglues.each do |q| %>
+          <ul class="sell_list">
+            <li><a href="<%= show_raider_main_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

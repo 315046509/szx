@@ -1,0 +1,83 @@
+<%= render "comment/hear" %>
+<div class="center">
+  <div class="con_left fn-left">
+    <div class="con_title">
+      <h1 class="line_name"><%= @hotdoor.title %></h1>
+
+      <div class="yuding">
+        <div class="yuding_imgs">
+          <div style="height:233px; width:373px; overflow:hidden;">
+
+            <%= image_tag @hotdoor.avatar.url(:show) %>
+          </div>
+        </div>
+        <div class="yuding_info">
+          <ul><br/>
+            <li>
+              价格：<span class="color_f60">￥<span class="yd_price"><%= @hotdoor.price %></span>起</span>
+            </li>
+            <li>报名人数：已有2103人预订</li>
+            <li>满意度：<font style="color:#ff6600;">98%</font></li>
+            <li>
+              <!-- Baidu Button BEGIN -->
+              <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                <span class="bds_more">分享到：</span>
+
+                <div class="bdsharebuttonbox">
+                  <a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_tsohu" data-cmd="tsohu" title="分享到搜狐微博"></a>
+                </div>
+                <script>window._bd_share_config = {"common": {"bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16"}, "share": {}};
+                with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+              </div>
+              <!-- Baidu Button END -->
+            </li>
+            <br/>
+            <li>
+              <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">
+                <input type="submit" class="submit" value="立即预订">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="clear"></div>
+      </div>
+
+      <div class="hot_reasons">
+        <div class="reason_img"></div>
+        <span class="reason_title">推荐理由</span>
+
+        <div class="reason_con">
+          <%= @hotdoor.description.html_safe %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="con_right fn-right">
+    <div class="top_sell">
+      <h3>热销线路</h3>
+      <% @hotdoors.each do |q| %>
+          <ul class="sell_list">
+            <li>・ <a href="<%= gentuan_destination_one_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+
+    <div class="new_gonglue">
+      <h3>最新旅游攻略</h3>
+
+      <div class="gonglue_img">
+        <a href="#"><img src="/images/grey.gif" data-original="/images/gongl1.gif"></a>
+        <a href="#"><img src="/images/grey.gif" data-original="/images/gongl2.gif"></a>
+      </div>
+      <% @gonglues.each do |q| %>
+          <ul class="gonglue_list">
+            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

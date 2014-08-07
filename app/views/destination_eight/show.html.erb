@@ -1,0 +1,210 @@
+<%= render "comment/hear" %>
+<div class="center" style="position:static;">
+<div class="sou_left fn-left">
+  <div class="topNameInfo cfix">
+
+    <div class="nameInfo cfix">
+      <a class="modal_gold" title="推荐酒店"></a>
+
+      <h1 cityname="<%= @hotels.name %>"><%= @hotels.name %></h1>
+    </div>
+
+    <div class="leftNameInfo">
+      <div class="locationInfo cfix">
+        <span class="locSpan"><%= @hotels.address %></span>
+      </div>
+
+      <div class="hotel_services cfix">
+        <a class="park"></a>
+        <a class="free_park"></a>
+        <a class="restaurant"></a>
+        <a class="meet"></a>
+        <a class="wireless"></a>
+        <a class="free_wireless"></a>
+      </div>
+    </div>
+
+    <div class="rightPriceInfo cfix">
+      <a class="ydBtn" title="" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes"></a>
+    <span class="leftPrice">
+      <span class="priceList">
+        <span class="priceInner">¥<span class="price"><%= @hotels.price %></span></span>起
+      </span>
+    </span>
+    </div>
+  </div>
+  <div id="hotelMap" class="allmaps"></div>
+
+  <div class="sliderInfo cfix">
+    <div class="leftSlider">
+      <div class="slider cfix">
+        <%= image_tag @hotels.avatar.url(:show) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel_detailed" id="hotel_fxyd" style="padding-top: 0px;">
+    <div class="hotel_nav" style="position: relative; top: 0px;">
+      <div class="navInfos">
+        <ul id="contentTab" class="hotel_tabs layoutfix clearfix">
+          <li class="nav_cur"><a id="aTo_fxyd">房型预订</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hotel_contents">
+      <div class="search_room_list" style="margin-top:3px;">
+        <table class="search_room_table">
+          <thead>
+          <tr>
+            <td class="search_room_type" width="255">房型</td>
+            <td width="60" align="center">床型</td>
+            <td width="60" align="center">早餐</td>
+            <td width="60" align="center"></td>
+            <td class="search_room_price" width="100">日均价</td>
+            <td width="145"></td>
+          </tr>
+          </thead>
+          <tbody id="commetcontent_list">
+          <tr style="display: table-row;">
+            <td class="search_room_type">
+              <%= @hotels.fangxing %>
+              <span class="room_services">
+                <i class="room_img"></i>
+                <i class="room_gift"></i>
+              </span>
+            </td>
+            <td align="center"><%= @hotels.bed_type %></td>
+            <td align="center"><%= @hotels.breakfast %></td>
+            <td align="center"></td>
+            <td class="search_room_price"><%= @hotels.average %></td>
+            <td class="search_room_sub">
+              <a class="have_room" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" title="立即预订"></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="services_info">
+      <h2 class="service_title" id="hotel_wxts">温馨提示</h2>
+
+      <div class="hotel_contents">
+        <ul class="hotel_tishi">
+          <li class="cfix"><span>入住须知：</span><%= @hotels.ruzhuxuzhi %></li>
+          <li class="cfix"><span>付费说明：</span><%= @hotels.fufeishuoming %></li>
+          <li class="cfix"><span>免费服务：</span><%= @hotels.mianfeifuwu %></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="services_info">
+      <h2 class="service_title" id="hotel_zkdp">住客点评</h2>
+      <a name="postform"></a>
+      <a name="commettop"></a>
+
+      <div class="mt1">
+        <dl class="">
+          <dd id="commetcontentNew2"></dd>
+          <dd id="commetcontent2">
+            <div class="user_dp">
+              <div class="dp_manyi">
+                <div class="dp_count">
+                  <p class="dp_count_row1">客户综合满意度</p>
+
+                  <p class="dp_count_row2">100%</p>
+
+                  <p class="dp_count_row3">基于<i>53602</i>人点赞</p>
+                </div>
+                <div class="manyi_type">
+                  <ul>
+                    <li>
+                      <span>100%</span>
+                      行程：
+                      <div class="manyi_100">
+                        <div class="manyi_user"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <span>100%</span>
+                      导游：
+                      <div class="manyi_100">
+                        <div class="manyi_user" style="width:100%;"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <span>100%</span>
+                      交通：
+                      <div class="manyi_100">
+                        <div class="manyi_user" style="width:100%;"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <span>100%</span>
+                      住宿：
+                      <div class="manyi_100">
+                        <div class="manyi_user" style="width:100%;"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sub_dp">
+                  <span class="fabu_pinglun">向您承诺</span>
+
+                  <p>人性化服务,让您真正体会家的温暖</p>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="con_right fn-right hotel_right">
+
+  <div class="hotel_manyi">
+    <h2><span>98%</span>客户满意度</h2>
+  </div>
+
+  <div class="hotel_around">
+    <h3>酒店推荐</h3>
+    <ul class="around_list">
+      <% @hotel.each do |q| %>
+          <li class="cfix">
+            <div class="around_left">
+              <%= image_tag q.avatar.url(:index1) %>
+            </div>
+            <div class="around_right">
+              <h4><a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= q.name %></a></h4>
+
+              <p><%= q.address %></p>
+              <span>¥<i><%= q.price %></i>元起</span>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="new_gonglue">
+    <h3>最新旅游攻略</h3>
+
+    <div class="gonglue_img">
+      <a href="#"><img src="../images/gongl1.gif"></a>
+      <a href="#"><img src="../images/gongl2.gif"></a>
+    </div>
+    <% @gonglues.each do |q| %>
+        <ul class="gonglue_list">
+          <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
+        </ul>
+    <% end %>
+  </div>
+</div>
+<div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

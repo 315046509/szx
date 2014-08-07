@@ -1,0 +1,76 @@
+<%= render "comment/hear" %>
+<div class="center qianzheng">
+  <div class="channel_side fn-left">
+    <div class="new_gonglue">
+      <h3>攻略宝典</h3>
+      <% @gonglues.each do |q| %>
+          <ul class="gonglue_list">
+            <li><a href="<%= show_raider_main_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+
+    <div class="new_gonglue">
+      <h3>热销线路</h3>
+      <% @hotdoors.each do |q| %>
+          <ul class="sell_list">
+            <li>・ <a href="<%= gentuan_destination_one_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="side_right fn-right">
+    <div class="crumbs">
+      当前位置：<a href="<%= root_path %>">网站首页</a> &gt; <a href="<%= visa_main_index_path %>">签证</a>
+    </div>
+
+    <div class="big_banner">
+      <img src="../../images/pics/visa_ad.jpg">
+    </div>
+    <div class="qz_detailed">
+
+      <div class="qz_top">
+        <p class="country_name"><%= @visa.title %>（旅游签证）</p>
+
+        <div class="qz_msg">
+          <p>
+            <i><em>￥<font><%= @visa.price %></font></em>起</i>
+            <span>[ 签证 ] 编号：<%= @visa.bianhao %></span>
+            <span>签证类型：<%= @visa.leixing %></span>
+          </p>
+
+          <p>
+            <span>办理时间：<%= @visa.banlishijian %></span>
+            <span>面试：<%= @visa.mianshi %></span>
+            <span>签证有效期：<%= @visa.youxiaoqi %></span>
+          </p>
+
+          <p>
+            <span>入境次数：<%= @visa.rujingcishu %></span>
+            <span>最长停留时间：<%= @visa.zuichangshijian %></span>
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="qz_allContent">
+        <div class="qz_tishi">
+          <h2>收客范围</h2>
+
+          <div>
+            <p><%= @visa.shoukefanwei %></p>
+          </div>
+        </div>
+        <div class="qz_tishi">
+          <h2>签证资料</h2>
+
+          <div>
+            <p><%= @visa.shoukefanwei.html_safe %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

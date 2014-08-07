@@ -1,0 +1,2 @@
+module DestinationSixHelper
+end

@@ -1,0 +1,35 @@
+input.valiTitle{
+    width: 457px;
+    height: 20px;
+    padding: 5px 8px;
+    font-size: 12px;
+    display: inline;
+}
+span.error{
+    padding: 0 0 0 8px;
+    display: inline;
+    color: #BD4247;
+}
+.valiTitlrControlBox, .valiImgControlBox, .valiIntroControlBox{
+    margin-left: 160px;
+    position: relative;
+}
+.valiTitlrControlBox span.error{
+    position: absolute;
+    left: 485px;
+    top: 7px;
+}
+.valiImgControlBox input.input-file{
+    width: 290px;
+    display: inline;
+}
+.valiImgControlBox span.error{
+    position: absolute;
+    left: 290px;
+    top: 5px;
+}
+.valiIntroControlBox span.error{
+    position: absolute;
+    left: 485px;
+    top: 5px;
+}

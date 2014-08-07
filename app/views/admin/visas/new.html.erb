@@ -1,0 +1,123 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_visas_path %>">签证管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      添加签证信息
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 添加签证信息</h2>
+    </div>
+    <div class="box-content">
+      <%= form_for(:visa, :url => admin_visas_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
+          <legend>添加签证信息</legend>
+          <%= f.label "地区分类：" %>
+          <%= f.select :question_category_id, options_for_select(Visa::QUESTION_CATEGORYS) %>
+          <span style="color: #336666">请选择地区分类</span>
+
+          <%= f.label "签证地区：" %>
+          <%= f.text_field :title %>
+          <span style="color: #336666">例：中国</span>
+
+          <%= f.label "签证价格：" %>
+          <%= f.text_field :price %>
+          <span style="color: #336666">例：3000</span>
+
+          <%= f.label "签证编号：" %>
+          <%= f.text_field :bianhao %>
+          <span style="color: #336666">例：V95634</span>
+
+          <%= f.label "签证类型：" %>
+          <%= f.text_field :leixing %>
+          <span style="color: #336666">例：旅游签证</span>
+
+          <%= f.label "办理时间：" %>
+          <%= f.text_field :banlishijian %>
+          <span style="color: #336666">例：领馆2天个工作日</span>
+
+          <%= f.label "面试：" %>
+          <%= f.text_field :mianshi %>
+          <span style="color: #336666">例：需要面试/不需要面试</span>
+
+          <%= f.label "签证有效期：" %>
+          <%= f.text_field :youxiaoqi %>
+          <span style="color: #336666">例：半年</span>
+
+          <%= f.label "入境次数：" %>
+          <%= f.text_field :rujingcishu %>
+          <span style="color: #336666">例：多次/没有</span>
+
+          <%= f.label "最长时间：" %>
+          <%= f.text_field :zuichangshijian %>
+          <span style="color: #336666">例：30天</span>
+
+          <%= f.label "收客范围：" %>
+          <%= f.text_field :shoukefanwei %>
+          <span style="color: #336666">例：不分领区，全国受理</span>
+
+          <%= f.label "签证资料：" %>
+          <%= f.cktext_area :description, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">完成提交</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!--/span-->
+</div>
+<script src="/admin/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#verifytitle").validate({
+                rules: {
+                    "visa[title]": {
+                        required: true
+                    },
+                    "visa[price]": {
+                        required: true
+                    }
+                },
+                messages: {
+                    "visa[title]": {
+                        required: "“请填写签证地区”"
+                    },
+                    "visa[price]": {
+                        required: "“请填写价格”"
+                    }
+                },
+                errorClass: "error",
+                highlight: function (element, errorClass) {
+                    $(element).parent().parent().addClass(errorClass);
+                },
+                unhighlight: function (element, errorClass) {
+                    $(element).parent().parent().removeClass(errorClass);
+                },
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent());
+                },
+                errorElement: "span"
+            });
+        });
+    });
+    $(document).ready(function () {
+        $('form[data-remote]').bind('ajax:before', function () {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>

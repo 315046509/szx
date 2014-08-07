@@ -1,0 +1,2 @@
+module Admin::HotdoorsHelper
+end

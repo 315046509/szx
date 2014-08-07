@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>《海外旅行社》后台管理系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template."/>
+  <meta name="author" content="Muhammad Usman"/>
+
+  <!-- The styles -->
+  <link href="/admin/css/bootstrap-cerulean.css" rel="stylesheet"/>
+  <style type="text/css">
+      body {
+          padding-bottom: 40px;
+      }
+
+      .sidebar-nav {
+          padding: 9px 0;
+      }
+  </style>
+  <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link href="/admin/css/bootstrap-responsive.css" rel="stylesheet"/>
+  <link href="/admin/css/charisma-app.css" rel="stylesheet"/>
+  <link href="/admin/css/jquery-ui-1.8.21.custom.css" rel="stylesheet"/>
+  <link href='/admin/css/fullcalendar.css' rel='stylesheet'/>
+  <link href='/admin/css/fullcalendar.print.css' rel='stylesheet' media='print'/>
+  <link href='/admin/css/chosen.css' rel='stylesheet'/>
+  <link href='/admin/css/uniform.default.css' rel='stylesheet'/>
+  <link href='/admin/css/colorbox.css' rel='stylesheet'/>
+  <link href='/admin/css/jquery.cleditor.css' rel='stylesheet'/>
+  <link href='/admin/css/jquery.noty.css' rel='stylesheet'/>
+  <link href='/admin/css/noty_theme_default.css' rel='stylesheet'/>
+  <link href='/admin/css/elfinder.min.css' rel='stylesheet'/>
+  <link href='/admin/css/elfinder.theme.css' rel='stylesheet'/>
+  <link href='/admin/css/jquery.iphone.toggle.css' rel='stylesheet'/>
+  <link href='/admin/css/opa-icons.css' rel='stylesheet'/>
+  <link href='/admin/css/uploadify.css' rel='stylesheet'/>
+  <link href='/admin/css/b-search.css' rel='stylesheet'/>
+  <link href="/admin/css/b-search.css" rel="stylesheet"/>
+  <link href="/admin/css/datepicker.css" rel="stylesheet"/>
+  <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- The fav icon -->
+  <link rel="shortcut icon" href="/admin/img/favicon.ico"/>
+  <script type="text/javascript" src="/assets/ckeditor/ckeditor.js"></script>
+  <script src='/admin/js/jquery.validate.js'></script>
+
+</head>
+
+<body>
+<!-- topbar starts -->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="<%= admin_accounts_path %>">
+        <span>海外旅行社</span></a>
+
+      <!-- user dropdown starts -->
+      <div class="btn-group pull-right">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="<%= admin_logout_path %>">
+          <i class="icon-user"></i><span class="hidden-phone"> 退出</span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "注销", admin_logout_path, :class => "link" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- topbar ends -->
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <!-- left menu starts -->
+    <div class="span2 main-menu-span">
+      <div class="well nav-collapse sidebar-nav">
+        <ul class="nav nav-tabs nav-stacked main-menu">
+          <li class="nav-header hidden-tablet">导航栏</li>
+          <li><%= link_to "<i class=\"icon-home\"></i>会员管理".html_safe, admin_accounts_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>最新公告".html_safe, admin_announcements_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>旅游攻略".html_safe, admin_raiders_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>首页展示".html_safe, admin_one_cities_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>国内外游".html_safe, admin_citys_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>公司旅游".html_safe, admin_companies_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>泰国旅游".html_safe, admin_taiguos_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>酒店展示".html_safe, admin_hotels_path %></li>
+          <li><%= link_to "<i class=\"icon-home\"></i>签证服务".html_safe, admin_visas_path %></li>
+
+          <li><%= link_to "<i class=\"icon-home\"></i>旅游管理".html_safe, admin_addcities_path %></li>
+        </ul>
+      </div>
+      <!--/.well -->
+    </div>
+    <!--/span-->
+    <!-- left menu ends -->
+
+    <div id="content" class="span10">
+      <!-- content starts -->
+      <%= yield %>
+      <!-- content ends -->
+    </div>
+    <!--/#content.span10-->
+  </div>
+  <!--/fluid-row-->
+  <hr/>
+</div>
+<!--/.fluid-container-->
+
+<!-- external javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- date select -->
+<script src="/admin/js/tcal.js"></script>
+
+</body>
+</html>

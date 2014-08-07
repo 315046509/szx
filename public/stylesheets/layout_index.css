@@ -1,0 +1,40 @@
+
+#box_main_sub8_sub1 {
+    width: 340px;
+    background: url(../images/index_20-20.jpg) no-repeat;
+    float: left;
+    height: 270px;
+}
+
+#box_main_sub8_sub2 {
+    width: 330px;
+    background: url(../images/index_23-21.jpg) no-repeat;
+    float: left;
+    height: 270px;
+}
+
+#box_main_sub8_sub3 {
+    width: 314px;
+    background: url(../images/index_22-22.jpg) no-repeat;
+    float: left;
+    height: 270px;
+}
+
+#box_main_sub10_sub1 {
+    width: 260px;
+    float: left;
+}
+
+#box_main_sub10_sub2 {
+    width: 354px;
+    background: url(../images/index_27-25.jpg) no-repeat;
+    float: left;
+    height: 243px;
+}
+
+#box_main_sub10_sub3 {
+    width: 314px;
+    background: url(../images/index_28-26.jpg) no-repeat;
+    float: left;
+    height: 243px;
+}

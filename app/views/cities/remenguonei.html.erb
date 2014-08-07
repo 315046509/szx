@@ -1,0 +1,128 @@
+<%= render "comment/hear" %>
+<div class="center">
+  <div class="channel_side fn-left">
+    <div class="side_hot">
+      <h3 class="side_title">热门国内游导航</h3>
+
+      <div class="line_list">
+        <dl class="long_name">
+          <dt class="t">
+            <a target="_blank" href="#" title="热门国内">热门国内</a>
+          </dt>
+          <% @category_1_city.each do |q| %>
+              <dd class="dd">
+                <a><%= q.title %></a>
+              </dd>
+          <% end %>
+
+          <div class="clear"></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="new_book">
+      <h3>最新预订动态</h3>
+
+      <ul class="book_list">
+        <li>
+          <p><span>[2分钟前]</span>客户 1397***9003 预订了</p>
+          <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[5分钟前]</span>客户 1348***9143 预订了</p>
+          <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[32分钟前]</span>客户 1868***7818 预订了</p>
+          <a href="">香港一日游（维多利亚游轮）品质纯玩团...</a>
+        </li>
+        <li>
+          <p><span>[49分钟前]</span>客户 1597***0098 预订了</p>
+          <a href="">港澳五日游（海洋+迪+杜莎+澳门）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[24分钟前]</span>客户 1332***8109 预订了</p>
+          <a href="">港澳四日游（优质诚信品质游）海洋公园...</a>
+        </li>
+        <li>
+          <p><span>[8分钟前]</span>客户 1397***9003 预订了</p>
+          <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="little_banner">
+      <img src="../images/cj_xiaotu.gif" data-original="../images/cj_xiaotu.gif" width="270" height="96" style="display: inline;">
+    </div>
+
+    <div class="new_gonglue">
+      <h3>最新预订动态</h3>
+
+      <div class="gonglue_img">
+        <a href="#"><img src="../images/gongl1.gif" data-original="/pics/gongl1.gif" style="display: inline;"></a>
+        <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
+      </div>
+
+      <% @gonglues.each do |q| %>
+          <ul class="gonglue_list">
+            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="side_right fn-right">
+
+    <div class="crumbs">
+      <a> 当前位置：</a>
+      <a href="/">网站首页</a> &gt;
+      <a href="<%= destination_three_index_path %>">国内旅游</a> &gt;
+      <a>热门国内</a>
+    </div>
+
+    <div class="hk_hot travel_line">
+      <h2 class="travel_Hd"></h2>
+
+      <div class="newChannel_Bd">
+        <div class="newChannel_list visible" id="hk_div1">
+          <ul id="change_li">
+            <% @travels_9.each do |q| %>
+                <li class="lineitem">
+                  <div class="img fn-left">
+                    <a title="<%= q.title %>" target="_blank" href="<%= city_path(q) %>">
+                      <%= image_tag q.avatar.url(:index) %>
+                    </a>
+                  </div>
+
+                  <dl class="info fn-left">
+                    <dt class="t">
+                      <a title="<%= q.title %>" target="_blank" href="<%= city_path(q) %>"><%= q.title %></a>
+                    </dt>
+                    <dd class="desc"></dd>
+                    <dd class="moredesc">
+                      <span>满意度：<span class="n">98%</span></span>
+                      <span class="pin"><span class="n">106</span>人点评</span>
+                    </dd>
+                  </dl>
+
+                  <div class="detail fn-right">
+                    <span class="sup">双重优惠</span>
+
+                    <p class="price"><span class="u">￥</span><span class="n"><%= q.price %></span>起</p>
+                    <span class="d"><em class="dsnum">50</em></span>
+                    <span class="s"><em class="dsnum">200</em></span>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+            <% end %>
+          </ul>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

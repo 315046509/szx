@@ -1,0 +1,170 @@
+<script language="javascript">
+    function preview(oper)
+    {
+        if (oper < 10){
+            bdhtml=window.document.body.innerHTML;
+            //获取当前页的html代码
+            sprnstr="<!--startprint"+oper+"-->";
+            //设置打印开始区域
+            eprnstr="<!--endprint"+oper+"-->";
+            //设置打印结束区域
+            prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18);
+            //从开始代码向后取html
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+            //从结束代码向前取html
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+            window.document.body.innerHTML=bdhtml;
+        } else {
+            window.print();
+        }
+    }
+</script>
+<%= render "comment/hear" %>
+<div class="center">
+  <div class="con_left fn-left">
+    <div class="con_title">
+      <h1 class="line_name"><%= @hotline.title %></h1>
+
+      <div class="yuding">
+        <div class="yuding_imgs">
+          <div style="height:233px; width:373px; overflow:hidden;">
+
+            <%= image_tag @hotline.avatar.url(:show) %>
+          </div>
+        </div>
+        <div class="yuding_info">
+          <ul><br/>
+            <li>
+              价格：<span class="color_f60">￥<span class="yd_price"><%= @hotline.price %></span>起</span>
+            </li>
+            <li>报名人数：已有2103人预订</li>
+            <li>满意度：<font style="color:#ff6600;">98%</font></li>
+            <li>
+              <!-- Baidu Button BEGIN -->
+              <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                <span class="bds_more">分享到：</span>
+
+                <div class="bdsharebuttonbox">
+                  <a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_tsohu" data-cmd="tsohu" title="分享到搜狐微博"></a>
+                </div>
+                <script>window._bd_share_config = {"common": {"bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16"}, "share": {}};
+                with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+              </div>
+              <!-- Baidu Button END -->
+            </li>
+            <br/>
+            <li>
+              <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">
+                <input type="submit" class="submit" value="立即预订">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="hot_reasons">
+        <div class="reason_img"></div>
+        <span class="reason_title">推荐理由</span>
+
+        <div class="reason_con">
+          <p><%= @hotline.description %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reference_trip" style="margin-top: 82px;">
+      <p class="trip_title" id="a_ckxc">
+        <i>参考行程</i>
+
+        <span class="dy_trip"><input type=button name='button_export' title='打印行程' onclick=preview(1) value=打印行程></span>
+        <!--丨-->
+        <!--<span class="xz_trip"><input type=button value=下载行程></span>-->
+      </p>
+      <!--startprint1-->
+      <!--打印内容开始-->
+      <div class="trip_detailed">
+        <div class="important_ts">
+          <b>重要提示：</b>以下为参考行程。鉴于旅游存在一定不确定性，我公司或航空公司有时无法提前提供合同中航班、酒店等某些细节和具体信息。
+        </div>
+        <ul class="trip_info">
+          <%= @hotline.xingcheng.html_safe %>
+        </ul>
+      </div>
+      <!--打印内容结束-->
+      <!--endprint1-->
+
+      <p class="trip_title" id="a_fysm">
+        <i>费用说明</i>
+      </p>
+
+      <div class="price_explain">
+        <%= @hotline.feiyongshuoming.html_safe %>
+      </div>
+
+      <p class="trip_title" id="a_cfbq">
+        <i>出发班期</i>
+      </p>
+
+      <div class="yuding_date">
+        <div class="mt1">
+          <dl class="">
+            <dd id="riliNew"></dd>
+            <dd id="rili">
+              <table class="calendar" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                <tr class="calendar_title">
+                  <td><%= image_tag @hotline.avatar1.url(:show) %></td>
+                </tr>
+                </tbody>
+              </table>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <p class="trip_title" id="a_wxts">
+        <i>温馨提示</i>
+      </p>
+
+      <div class="price_explain">
+        <br>
+        <%= @hotline.wenxintishi.html_safe %>
+      </div>
+
+
+      <p class="trip_title" id="a_ydts">
+        <i>预订提示</i>
+      </p>
+
+      <div class="price_explain">
+        <%= @hotline.yudingtishi.html_safe %>
+      </div>
+    </div>
+  </div>
+  <div class="con_right fn-right">
+    <div class="top_sell">
+      <h3>热销线路</h3>
+      <% @hotdoors.each do |q| %>
+          <ul class="sell_list">
+            <li>・ <a href="<%= gentuan_destination_one_path(q) %>" title="<%= q.title %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+
+    <div class="new_gonglue">
+      <h3>最新旅游攻略</h3>
+
+      <div class="gonglue_img">
+        <a href="#"><img src="../images/gongl1.gif" data-original="/pics/gongl1.gif" style="display: inline;"></a>
+        <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
+      </div>
+      <% @gonglues.each do |q| %>
+          <ul class="gonglue_list">
+            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

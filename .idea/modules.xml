@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../xiangmu/aimeng/.idea/aimeng.iml" filepath="$PROJECT_DIR$/../xiangmu/aimeng/.idea/aimeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../baihe/.idea/baihe.iml" filepath="$PROJECT_DIR$/../baihe/.idea/baihe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ceping/.idea/ceping.iml" filepath="$PROJECT_DIR$/../ceping/.idea/ceping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../xiangmu/dyj/.idea/dongying.iml" filepath="$PROJECT_DIR$/../xiangmu/dyj/.idea/dongying.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../m/.idea/m.iml" filepath="$PROJECT_DIR$/../m/.idea/m.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/travel.iml" filepath="$PROJECT_DIR$/.idea/travel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wxhome/.idea/weixin.iml" filepath="$PROJECT_DIR$/../wxhome/.idea/weixin.iml" />
+    </modules>
+  </component>
+</project>
+

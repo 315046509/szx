@@ -1,0 +1,59 @@
+<script>
+    <% if flash[:error_msg]%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_announcements_path %>">最新公告</a> <span class="divider">/</span>
+    </li>
+    <li>
+      添加公告
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 添加公告</h2>
+    </div>
+    <div class="box-content">
+      <%= form_for(:announcement, :url => admin_announcements_path, :id => "verifytitle", :class => "form-horizontal") do |f| %>
+          <legend>添加公告</legend>
+          <%= f.label "最新公告：" %>
+          <%= f.text_area :title , :style => "width:99%;height:100px" %>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">发布信息</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!--/span-->
+</div>
+<script>
+    $().ready(function () {
+        $("#verifytitle").validate({
+            rules: {
+                "announcement[title]": {
+                    required: true
+                }
+            },
+            messages: {
+                "announcement[title]": {
+                    required: "公告不能为空"
+                }
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('form[data-remote]').bind('ajax:before', function () {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>

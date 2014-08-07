@@ -1,0 +1,159 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_hotels_path %>"> 城市管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_hotel_occupancy_hotels_path %>">酒店管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      填写酒店信息
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 填写酒店信息</h2>
+    </div>
+    <div class="box-content">
+      <%= form_for(:occupancy_hotel, :url => admin_hotel_occupancy_hotels_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
+          <legend>填写酒店信息</legend>
+          <%= hidden_field_tag :hotel_id, @parent_id%>
+          <%= f.label "酒店图片：" %>
+          <%= f.file_field :avatar %><br/><br/>
+          <%= f.label "酒店：" %>
+          <%= f.text_field :name %><a>例：香格里拉</a>
+          <%= f.label "酒店地址：" %>
+          <%= f.text_field :address %><a>例：长春市西安大路</a>
+          <%= f.label "酒店价格：" %>
+          <%= f.text_field :price %><a>例：123</a>
+          <%= f.label "酒店房型：" %>
+          <%= f.text_field :fangxing %><a>例：豪华双床房	</a>
+          <%= f.label "房间床型：" %>
+          <%= f.text_field :bed_type %><a>例：双床</a>
+          <%= f.label "早餐：" %>
+          <%= f.text_field :breakfast %><a>例：不含</a>
+          <%= f.label "日均价：" %>
+          <%= f.text_field :average %><a>例：123</a>
+          <%= f.label "入住须知：" %>
+          <%= f.text_area :ruzhuxuzhi , :style => "width:50%;height:90px" %>
+          <%= f.label "付费说明：" %>
+          <%= f.text_area :fufeishuoming , :style => "width:50%;height:90px" %>
+          <%= f.label "免费服务：" %>
+          <%= f.text_area :mianfeifuwu , :style => "width:50%;height:90px" %>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">完成提交</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!--/span-->
+</div>
+<script src="./admin/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#verifytitle").validate({
+                rules: {
+                    "occupancy_hotel[avatar]": {
+                        required: true,
+                        accept: "jpg|png"
+                    },
+                    "occupancy_hotel[name]": {
+                        required: true
+                    },
+                    "occupancy_hotel[address]": {
+                        required: true
+                    },
+                    "occupancy_hotel[price]": {
+                        required: true
+                    },
+                    "occupancy_hotel[fangxing]": {
+                        required: true
+                    },
+                    "occupancy_hotel[bed_type]": {
+                        required: true
+                    },
+                    "occupancy_hotel[breakfast]": {
+                        required: true
+                    },
+                    "occupancy_hotel[average]": {
+                        required: true
+                    },
+                    "occupancy_hotel[ruzhuxuzhi]": {
+                        required: true
+                    },
+                    "occupancy_hotel[fufeishuoming]": {
+                        required: true
+                    },
+                    "occupancy_hotel[mianfeifuwu]": {
+                        required: true
+                    }
+                },
+                messages: {
+                    "occupancy_hotel[avatar]": {
+                        required: "“请上传图片”",
+                        accept: "图片类型必须是png或jpg"
+                    },
+                    "occupancy_hotel[name]": {
+                        required: "“请填写酒店名称”"
+                    },
+                    "occupancy_hotel[address]": {
+                        required: "“请填写酒店地址”"
+                    },
+                    "occupancy_hotel[price]": {
+                        required: "“请填写酒店价格”"
+                    },
+                    "occupancy_hotel[fangxing]": {
+                        required: "“请填写酒店房型”"
+                    },
+                    "occupancy_hotel[bed_type]": {
+                        required: "“请填写房间床型”"
+                    },
+                    "occupancy_hotel[breakfast]": {
+                        required: "“请填写酒店早餐”"
+                    },
+                    "occupancy_hotel[average]": {
+                        required: "“请填写酒店日均价”"
+                    },
+                    "occupancy_hotel[ruzhuxuzhi]": {
+                        required: "“请填写入住须知”"
+                    },
+                    "occupancy_hotel[fufeishuoming]": {
+                        required: "“请填写付费说明”"
+                    },
+                    "occupancy_hotel[mianfeifuwu]": {
+                        required: "“请填写免费服务”"
+                    }
+                },
+                errorClass: "error",
+                highlight: function (element, errorClass) {
+                    $(element).parent().parent().addClass(errorClass);
+                },
+                unhighlight: function (element, errorClass) {
+                    $(element).parent().parent().removeClass(errorClass);
+                },
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent());
+                },
+                errorElement: "span"
+            });
+        });
+    });
+    $(document).ready(function () {
+        $('form[data-remote]').bind('ajax:before', function () {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>

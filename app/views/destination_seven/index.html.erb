@@ -1,0 +1,125 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.fancybox-buttons').fancybox({
+            openEffect: 'none',
+            closeEffect: 'none',
+
+            prevEffect: 'none',
+            nextEffect: 'none',
+
+            closeBtn: false,
+
+            helpers: {
+                title: {
+                    type: 'inside'
+                },
+                buttons: {}
+            },
+
+            afterLoad: function () {
+                this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+            }
+        });
+
+    });
+</script>
+<style type="text/css">
+    .fancybox-custom .fancybox-skin {
+        box-shadow: 0 0 50px #222;
+    }
+</style>
+<%= render "comment/hear" %>
+
+<div class="center">
+  <div class="hkImg_list">
+    <h2>香港简介</h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/34_b.jpg"><img src="../images/hk/34_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/1_b.jpg"><img src="../images/hk/1_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/2_b.jpg"><img src="../images/hk/2_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/28_b.jpg"><img src="../images/hk/28_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+  <div class="hkImg_list">
+    <h2>国际都会<span>中西荟萃丨文化、艺术丨体育</span></h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/4_b.jpg"><img src="../images/hk/4_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/5_b.jpg"><img src="../images/hk/5_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/6_b.jpg"><img src="../images/hk/6_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/7_b.jpg"><img src="../images/hk/7_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+
+  <div class="hkImg_list">
+    <h2>活力澎湃<span>经济、会议展览业丨体坛成就丨电影、动画及创意产业</span></h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/8_b.jpg"><img src="../images/hk/8_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/9_b.jpg"><img src="../images/hk/9_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/10_b.jpg"><img src="../images/hk/10_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/11_b.jpg"><img src="../images/hk/11_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+  <div class="hkImg_list">
+    <h2>安定平稳<span>管治、法律丨卫生、社会福利丨教育、研究</span></h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/12_b.jpg"><img src="../images/hk/12_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/13_b.jpg"><img src="../images/hk/13_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/14_b.jpg"><img src="../images/hk/14_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/15_b.jpg"><img src="../images/hk/15_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+  <div class="hkImg_list">
+    <h2>多元共融<span>多元社会丨都市建筑、古迹丨城市景观、大自然</span></h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/16_b.jpg"><img src="../images/hk/16_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/17_b.jpg"><img src="../images/hk/17_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/18_b.jpg"><img src="../images/hk/18_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/19_b.jpg"><img src="../images/hk/19_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+  <div class="hkImg_list">
+    <h2>连接世界<span>海陆空交通丨通往中国的大门丨基建、运输丨通讯</span></h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/20_b.jpg"><img src="../images/hk/20_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/21_b.jpg"><img src="../images/hk/21_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/22_b.jpg"><img src="../images/hk/22_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/23_b.jpg"><img src="../images/hk/23_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+  <div class="hkImg_list">
+    <h2>人物风貌<span>名人丨忙里偷闲</span></h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/24_b.jpg"><img src="../images/hk/24_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/25_b.jpg"><img src="../images/hk/25_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/26_b.jpg"><img src="../images/hk/26_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/27_b.jpg"><img src="../images/hk/27_s.jpg" alt=""></a>
+    </p>
+  </div>
+
+  <div class="hkImg_list">
+    <h2>地图</h2>
+
+    <p class="hkImgs">
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/29_b.jpg"><img src="../images/hk/29_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/30_b.jpg"><img src="../images/hk/30_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/31_b.jpg"><img src="../images/hk/31_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/32_b.jpg"><img src="../images/hk/32_s.jpg" alt=""></a>
+      <a class="fancybox-buttons" data-fancybox-group="button" href="../images/hk/33_b.jpg"><img src="../images/hk/33_s.jpg" alt=""></a>
+    </p>
+  </div>
+</div>
+<%= render "comment/footer" %>

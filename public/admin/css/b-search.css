@@ -1,0 +1,16 @@
+.id_search{
+	width:100px;
+}
+.class_search, .status_search{
+	width:90px;
+}
+.date_search{
+	width:85px;
+}
+input.search_submit{
+	width:72px;
+	height:28px;
+	border:0;
+	background:url(../img/search-button.png);
+	cursor:pointer;
+}

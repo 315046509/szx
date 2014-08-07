@@ -1,0 +1,57 @@
+<script>
+    <% if flash[:error_msg]%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+<div class="login">
+  <div class="login_top cfix">
+    <div class="fn-right">
+      <div class="login_tel"></div>
+    </div>
+    <div class="fn-left">
+      <a href="/">
+        <div class="login_logo"></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="login_main cfix">
+    <div class="fn-right login_border">
+
+      <div class="login_div">
+        <h1 title="会员登陆"></h1>
+        <%= form_tag(login_check_main_index_path, :method => :post, :id => "formLogin") do %>
+            <input type="hidden" name="fmdo" value="login">
+            <input type="hidden" name="dopost" value="login">
+            <input type="hidden" name="gourl" value="">
+            <table class="login_tab">
+              <tbody>
+              <tr>
+                <td class="username">
+                  <input type="text" name="mobile" id="mobile" value="请输入手机号码" title="请输入手机号码"></td>
+              </tr>
+              <tr>
+                <td class="user_pwd"><input type="password" name="passwd" id="passwd"></td>
+              </tr>
+              <tr>
+                <td class="user_sub">
+                  <input type="submit" class="submit_login" value="">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="else_login">
+              <h2>还不是海外旅行社会员？<a href="<%= signup_path %>">免费注册</a></h2>
+            </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="fn-left">
+      <img src="../images/login_img.gif" height="374" width="525">
+    </div>
+  </div>
+</div>
+
+<%= render "comment/footer" %>

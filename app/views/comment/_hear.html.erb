@@ -1,0 +1,145 @@
+<!--头部-->
+<div class="top_adv"><a href="#" target="_bank"></a></div>
+<div class="title">
+  <div class="title_menu center">
+    <ul>
+
+      <% if @member_curr %>
+          <font color="#FF0000">会员：《<%= @member_curr.name %>》，欢迎来到海外旅行社，祝您旅途愉快</font>
+          <a href="<%= logout_path %>">【退出】</a>
+      <% else %>
+          <li><a target="_blank" href="<%= signup_path %> ">注册</a></li>
+          <li>丨</li>
+          <li><a target="_blank" href="<%= login_path %>">登陆</a></li>
+          <li><a target="_blank" href="#">关于我们</a></li>
+      <% end %>
+    </ul>
+    欢迎访问<a style="margin:0;" href="/" class="title_a">海外旅行社</a>
+  </div>
+</div>
+
+<div id="head" class="top1 center">
+  <div class="logo"><a href="/">
+    <img src="/images/logo.jpg"></a></div>
+  <div class="">
+    <div class="newTop-search">
+      <span class="newTop-search-s1 fn-left"></span>
+    </div>
+    <ul class="toolNav">
+      <li id="itineraries">
+        <a href="<%= root_path %>">旅游路线</a>
+      </li>
+      <li id="travelGuide">
+        <a class="">旅游攻略</a>
+        <ul class="subNav" style="display: none;">
+          <% @gonglues.each do |q| %>
+              <li>
+                <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a>
+              </li>
+          <% end %>
+        </ul>
+      </li>
+      <li id="touristAttractions">
+        <a class="">旅游景点</a>
+        <ul class="subNav" style="display: none;">
+          <li>
+            <h6><a>港澳</a></h6>
+            <% @category_1_jingdian.each do |q| %>
+                <a href="<%= xianggang_cities_path %>" target="_blank" class=""><%= q.title %></a>
+            <% end %>
+          </li>
+          <li>
+            <h6><a>出境</a></h6>
+            <% @category_9_jingdian.each do |q| %>
+                <a href="<%= remenchujing_cities_path %>" target="_blank" class=""><%= q.title %></a>
+            <% end %>
+          </li>
+          <li>
+            <h6><a>国内</a></h6>
+            <% @category_10_jingdian.each do |q| %>
+                <a href="<%= remenguonei_cities_path %>" target="_blank" class=""><%= q.title %></a>
+            <% end %>
+          </li>
+          <li>
+            <h6><a>长春</a></h6>
+            <% @category_11_jingdian.each do |q| %>
+                <a href="<%= changchun_cities_path %>" target="_blank" class=""><%= q.title %></a>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li id="landscapePictures">
+        <a>风景图片</a>
+      </li>
+      <li id="businessTravelServices">
+        <a href="<%= visa_main_index_path %>" target="_blank" class="">商务服务</a>
+        <ul class="subNav" style="display: none;">
+          <li>
+            <a href="<%= visa_main_index_path %>" target="_blank">亚洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">欧洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">非洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">澳洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">美洲签证</a>
+          </li>
+        </ul>
+      </li>
+      <li id="conferenceTourism">
+        <a href="<%= destination_eight_index_path %>">酒店展示</a>
+      </li>
+    </ul>
+
+  </div>
+
+  <script type="text/javascript">
+      $(function () {
+          $(".toolNav").children("li").bind({
+              mouseover: function () {
+                  $(this).children(".subNav").show();
+                  $(this).children("a").addClass("current");
+              }, mouseout: function () {
+
+                  $(this).children(".subNav").hide();
+                  $(this).children("a").removeClass("current");
+              }
+          });
+      });
+  </script>
+
+</div>
+
+<div class="nav">
+  <div class="center">
+
+    <ul class="nav_menu">
+      <li><a href="/">首页</a></li>
+
+      <li><a href="<%= destination_one_index_path %>">港澳旅游</a></li>
+
+      <li><a href="<%= destination_two_index_path %>">出境旅游</a></li>
+
+      <li><a href="<%= destination_three_index_path %>">国内旅游</a></li>
+
+      <li><a href="<%= destination_four_index_path %>">长春短线</a></li>
+
+      <li><a href="<%= destination_five_index_path %>">公司旅游</a></li>
+
+      <li><a href="<%= destination_six_index_path %>">泰国旅游</a></li>
+
+      <li><a href="<%= destination_seven_index_path %>">香港印象</a></li>
+
+      <li><a href="<%= destination_eight_index_path %>">酒店展示</a></li>
+
+    </ul>
+  </div>
+</div>
+<div class="center">
+  <p class="hot_tour">
+    <span class="first_span"><font color="red">最新公告:</font></span>
+
+    <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="1" scrolldelay="7" direction="left" width="920" height="20" style="line-height: 19px;">
+      <% @announcement.each do |q| %>
+          <a><%= q.title %></a>
+      <% end %>
+    </marquee>
+  </p>
+</div>

@@ -1,0 +1,341 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<%= render "comment/hear" %>
+<div class="center">
+<div class="channel_side fn-left">
+  <div class="tuan_online">
+    <h2 class="tuan_title">在线定制包团</h2>
+    <%= form_tag(user_create_destination_five_index_path, :method => :post, :id => "formT") do %>
+        <table>
+          <tbody>
+          <tr>
+            <td class="prev_td">*公司名称：</td>
+            <td><input type="text" name="customized[company_name]" id="company_name" value=""></td>
+          </tr>
+          <tr>
+            <td class="prev_td">*联系人：</td>
+            <td><input type="text" name="customized[name]" id="name"></td>
+          </tr>
+          <tr>
+            <td class="prev_td">*联系手机：</td>
+            <td><input type="text" name="customized[tell]" id="tell"></td>
+          </tr>
+          <tr>
+            <td class="prev_td">*包团电话：</td>
+            <td><input type="text" name="customized[caltel]" id="caltel"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="确认提交" class="submit_tuan"></td>
+          </tr>
+          </tbody>
+        </table>
+    <% end %>
+    <script language="javascript">
+        $("#formT").submit(function () {
+            if ($("#company_name").val() == '') {
+                alert("公司名称不能为空！");
+                return false;
+            }
+            if ($("#name").val() == '') {
+                alert("联系人不能为空！");
+                return false;
+            }
+
+            if ($("#tell").val().length <= 0) {
+                alert("联系电话不能为空！");
+                return false;
+            }
+            if ($("#caltel").val().length <= 0) {
+                alert("请填写包团电话");
+                return false;
+            }
+            if (egrMobileCheck($("#tell").val()) == false) {
+                alert("请填写11位有效手机号码");
+                return false;
+            }
+
+        });
+        /* 手机校验 */
+        function egrMobileCheck(in_mobile) {
+            var reg = new RegExp(/^1[3,5,8]\d{9}$/ig);
+            if (!reg.test(in_mobile)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <div class="write_xq">
+      <a><img src="../images/gongsi/gongsi1.gif" width="260" height="61"></a>
+    </div>
+  </div>
+
+  <div class="our_tel">
+    <div class="company_tel"></div>
+    <div class="tuan_guwen">
+      <ul>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+    <div class="change_reason">
+      <h2>选择理由</h2>
+
+      <p>1.可信赖：</p>
+      <span>国家旅游局指定出境组团社</span>
+
+      <p>2.经验足：</p>
+      <span>十八年专业包团旅游经验。超过1300家企业的不二选择。</span>
+
+      <p>3.一对一：</p>
+      <span>线上即可预订，专属客服一对一随时应对。个性化方案量身定做。</span>
+
+      <p>4.服务优：</p>
+      <span>长期与高级供应商合作，最优价格同时保证最优服务。</span>
+
+      <p>5.高质量：</p>
+      <span>完善的监控机制与淘汰体制。保证出游质量。</span>
+
+      <p>6.辐射广：</p>
+      <span>辐射国家200多个，自有线路1000多条，包揽各大洲大多数景点，超多选择。</span>
+
+    </div>
+  </div>
+
+
+  <div class="new_book hk_new_book" style=" height:100px; ">
+    <h3>企业用户预订动态</h3>
+
+    <ul class="book_list">
+
+      <li>
+        <p><span>[28分钟前]</span>客户 1868***7818 预订了</p>
+        <a href="">香港一日游（维多利亚游轮）品质纯玩团...</a>
+      </li>
+
+      <li>
+        <p><span>[29分钟前]</span>客户 1597***0098 预订了</p>
+        <a href="">港澳五日游（海洋+迪+杜莎+澳门）品质纯...</a>
+      </li>
+      <li>
+        <p><span>[42分钟前]</span>客户 1332***8109 预订了</p>
+        <a href="">港澳四日游（优质诚信品质游）海洋公园...</a>
+      </li>
+      <li>
+        <p><span>[10分钟前]</span>客户 1397***9003 预订了</p>
+        <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+      </li>
+      <li>
+        <p><span>[46分钟前]</span>客户 1397***9003 预订了</p>
+        <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+      </li>
+      <li>
+        <p><span>[31分钟前]</span>客户 1348***9143 预订了</p>
+        <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="side_right fn-right">
+  <div class="big_banner" style="margin:0;">
+    <img src="../images/gongsi/gongsi3.gif">
+  </div>
+
+  <div class="travel_company">
+    <p class="cpy_p">
+      业务范围
+      <span>公司旅游 商务会所新体验</span>
+    </p>
+
+    <div class="company_travels">
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-1.jpg" width="270" height="159">
+
+        <h2>员工奖励旅行</h2>
+        <span>卓越员工奖励旅游将以旅游活动为媒介，通过旅游加深员工团队精神，弘扬企业文化，增强管理者和企业亲和力。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-2.jpg" width="270" height="159">
+
+        <h2>团队拓展培训</h2>
+        <span>通过卓越团队拓展培训，增加企业凝聚力，树立团队精神，改善人际关系。形成积极向上的企业氛围，挖掘员工的内在潜能。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-3.jpg" width="270" height="159">
+
+        <h2>商务会议旅游</h2>
+        <span>行程策划量身定做。专业团队提供一站式全方位服务。酒店、机票、签证、旅游、门票等一站采购。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-4.jpg" width="270" height="159">
+
+        <h2>企业活动年会</h2>
+        <span>提供策划、场馆预定、布置、交通、住宿等全方位服务。无限创意，细节至上，海量成功案例，品牌保证。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="clear"></div>
+</div>
+<div class="center" style=" margin:10px auto;">
+  <img src="../images/gongsi/gongsi5.jpg" width="990">
+</div>
+<div class="center">
+  <div class="channel_side fn-left">
+
+    <div class="dp_business">
+      <h3>企业用户点评</h3>
+
+      <ul class="business_dpList">
+
+        <li>
+          <div class="business_left">
+            <p>满意度</p>
+            <span>99%</span>
+          </div>
+          <div class="business_right">
+            <p><i>2014-04-21</i>周小姐</p>
+            <span> 服务行程都很不错 ...</span>
+          </div>
+
+          <div class="clear"></div>
+        </li>
+        <li>
+          <div class="business_left">
+            <p>满意度</p>
+            <span>98%</span>
+          </div>
+          <div class="business_right">
+            <p><i>2014-05-01</i>徐先生</p>
+            <span> 行程很不错，玩的很好，不过导游的服务还可以更好 ...</span>
+          </div>
+
+          <div class="clear"></div>
+        </li>
+        <li>
+          <div class="business_left">
+            <p>满意度</p>
+            <span>98%</span>
+          </div>
+          <div class="business_right">
+            <p><i>2014-05-05</i>程女士</p>
+            <span>服务非常不错，挺好的...</span>
+          </div>
+
+          <div class="clear"></div>
+        </li>
+        <li>
+          <div class="business_left">
+            <p>满意度</p>
+            <span>100%</span>
+          </div>
+          <div class="business_right">
+            <p><i>2014-07-01</i>程先生</p>
+            <span>非常满意哈 下次有时间旅游再联系你们...</span>
+          </div>
+
+          <div class="clear"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="our_client">
+      <h3>我们的客户</h3>
+      <ul class="client_list">
+        <li><img src="../images/gongsi/0_07.jpg"></li>
+        <li><img src="../images/gongsi/0_09.jpg"></li>
+        <li><img src="../images/gongsi/0_17.jpg"></li>
+        <li><img src="../images/gongsi/0_19.jpg"></li>
+        <li><img src="../images/gongsi/0_27.jpg"></li>
+        <li><img src="../images/gongsi/0_29.jpg"></li>
+        <li><img src="../images/gongsi/0_37.jpg"></li>
+        <li><img src="../images/gongsi/0_39.jpg"></li>
+        <li><img src="../images/gongsi/0_47.jpg"></li>
+        <li><img src="../images/gongsi/0_49.jpg"></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+  <div class="side_right fn-right">
+    <div class="company_hot">
+      <h2 class="travel_Hd">
+            	<span class="float_tel">更多推荐线路请致电：<i>0000-
+
+                  00000000</i></span>
+        <span class="travel_Hd_type" style="padding:0;">当季热卖线路</span>
+      </h2>
+
+      <div class="newChannel_Bd" style=" width:707px; border-left:none; ">
+        <div class="newChannel_right">
+          <div class="newChannel_list visible">
+            <ul>
+              <% @hl.each do |q| %>
+                  <li class="lineitem">
+                    <div class="img fn-left">
+                      <a title="<%= q.title %>" target="_blank" href="<%= destination_five_path(q) %>">
+                        <%= image_tag q.avatar.url(:index) %>
+                      </a>
+                    </div>
+
+                    <dl class="info fn-left">
+                      <dt class="t">
+                        <a title="<%= q.title %>" target="_blank" href="<%= destination_five_path(q) %>"><%= q.title %></a>
+                      </dt>
+                      <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+
+                      <dd class="moredesc">
+                        <span>满意度：<span class="n">98%</span></span>
+                        <span class="pin"><span class="n">106</span>人点评</span>
+                      </dd>
+                    </dl>
+                    <div class="detail fn-right">
+                      <span class="sup">双重优惠</span>
+
+                      <p class="price">
+                        <span class="u">￥</span><span class="n"><%= q.price %></span>起
+                      </p>
+                      <span class="d"><em class="dsnum">50</em></span><span class="s"><em class="dsnum">200</em></span>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

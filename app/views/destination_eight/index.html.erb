@@ -1,0 +1,163 @@
+<%= render "comment/hear" %>
+<div class="center">
+  <div class="channel_side fn-left">
+    <div class="side_hot">
+      <h3 class="side_title">酒店目录</h3>
+
+      <div class="line_list">
+        <dl>
+          <dt class="t">
+            <a title="港澳旅游">香港酒店</a>
+          </dt>
+          <% @hotels1.each do |q| %>
+              <dd class="dd">
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= truncate_u(q.name, 4) %></a>
+              </dd>
+          <% end %>
+          <div class="clear"></div>
+        </dl>
+
+        <dl>
+          <dt class="t">
+            <a title="出境旅游酒店">国内酒店</a>
+          </dt>
+          <% @hotels2.each do |q| %>
+              <dd class="dd">
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= truncate_u(q.name, 4) %></a>
+              </dd>
+          <% end %>
+          <div class="clear"></div>
+        </dl>
+
+        <dl>
+          <dt class="t">
+            <a title="国际酒店">国际酒店</a>
+          </dt>
+          <% @hotels3.each do |q| %>
+              <dd class="dd">
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= truncate_u(q.name, 4) %></a>
+              </dd>
+          <% end %>
+          <div class="clear"></div>
+        </dl>
+
+      </div>
+    </div>
+
+    <div class="new_book">
+      <h3>最新预订动态</h3>
+      <ul class="book_list">
+        <li style="overflow: hidden; height: 3.4931471390939564px; margin-top: 0px; margin-bottom: 0px; padding-top: 0.9748317597471505px; padding-bottom: 0.9748317597471505px;">
+          <p><span>[42分钟前]</span>客户 1868***7818 预订了</p>
+          <a href="">香港一日游（维多利亚游轮）品质纯玩团...</a>
+        </li>
+        <li>
+          <p><span>[20分钟前]</span>客户 1597***0098 预订了</p>
+          <a href="">港澳五日游（海洋+迪+杜莎+澳门）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[8分钟前]</span>客户 1332***8109 预订了</p>
+          <a href="">港澳四日游（优质诚信品质游）海洋公园...</a>
+        </li>
+        <li>
+          <p><span>[30分钟前]</span>客户 1397***9003 预订了</p>
+          <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[4分钟前]</span>客户 1397***9003 预订了</p>
+          <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[1分钟前]</span>客户 1348***9143 预订了</p>
+          <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+        </li>
+        <li>
+          <p><span>[42分钟前]</span>客户 1868***7818 预订了</p>
+          <a href="">香港一日游（维多利亚游轮）品质纯玩团...</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="little_banner">
+      <img src="../images/cj1.gif" width="270" height="96">
+    </div>
+
+    <div class="new_gonglue">
+      <h3>最新旅游攻略</h3>
+
+      <div class="gonglue_img">
+        <a href="#"><img src="../images/gongl1.gif"></a>
+        <a href="#"><img src="../images/gongl2.gif"></a>
+      </div>
+      <% @gonglues.each do |q| %>
+          <ul class="gonglue_list">
+            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= truncate_u(q.title, 12) %></a></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="side_right fn-right">
+    <div class="hotel_list">
+      <h2>
+        <span>香港酒店</span>
+      </h2>
+
+      <div class="hotels">
+        <% @hotels1.each do |q| %>
+            <div class="one_hotel">
+              <a href="<%= destination_eight_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
+              <p><a href="<%= destination_eight_path(q) %>"><%= truncate_u(q.name, 10) %></a></p>
+              <span>￥<%= q.price %></span>
+            </div>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="hotel_list">
+      <h2>
+        <span>国内酒店</span>
+      </h2>
+
+      <div class="hotels">
+        <% @hotels2.each do |q| %>
+            <div class="one_hotel">
+              <a href="<%= destination_eight_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
+              <p><a href="<%= destination_eight_path(q) %>"><%= truncate_u(q.name, 10) %></a></p>
+              <span>￥<%= q.price %></span>
+            </div>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="hotel_list" style="margin:0;">
+      <h2>
+        <span>国际酒店</span>
+      </h2>
+
+      <div class="hotels">
+        <% @hotels3.each do |q| %>
+            <div class="one_hotel">
+              <a href="<%= destination_eight_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
+              <p><a href="<%= destination_eight_path(q) %>"><%= truncate_u(q.name, 10) %></a></p>
+              <span>￥<%= q.price %></span>
+            </div>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= render "comment/footer" %>

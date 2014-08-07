@@ -1,0 +1,103 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_citys_path %>"> 世界游管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_city_freelines_path %>">自由行管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      新建自由行
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 新建自由行</h2>
+    </div>
+    <div class="box-content">
+      <%= form_for(:freeline, :url => admin_city_freelines_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
+          <legend>新建自由行</legend>
+          <%= hidden_field_tag :city_id, @parent_id%>
+          <%= f.label "自由行：" %>
+          <%= f.text_field :title %><br/>
+          <%= f.label "价格：" %>
+          <%= f.text_field :price %><br/>
+          <%= f.label "自由行图：" %>
+          <%= f.file_field :avatar %><br/><br/>
+          <%= f.label "自由行内容：" %>
+          <%= f.cktext_area :description, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">完成提交</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!--/span-->
+</div>
+<script src="/admin/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#verifytitle").validate({
+                rules: {
+                    "freeline[title]": {
+                        required: true
+                    },
+                    "freeline[price]": {
+                        required: true
+                    },
+                    "freeline[avatar]": {
+                        required: true,
+                        accept: "jpg|png"
+                    },
+                    "freeline[description]": {
+                        required: true
+                    }
+                },
+                messages: {
+                    "freeline[title]": {
+                        required: "“请填写标题”"
+                    },
+                    "freeline[price]": {
+                        required: "“请填写价格”"
+                    },
+                    "freeline[avatar]": {
+                        required: "“请上传图片”",
+                        accept: "图片类型必须是png或jpg"
+                    },
+                    "freeline[description]": {
+                        required: "“请填写内容”"
+                    }
+                },
+                errorClass: "error",
+                highlight: function (element, errorClass) {
+                    $(element).parent().parent().addClass(errorClass);
+                },
+                unhighlight: function (element, errorClass) {
+                    $(element).parent().parent().removeClass(errorClass);
+                },
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent());
+                },
+                errorElement: "span"
+            });
+        });
+    });
+    $(document).ready(function () {
+        $('form[data-remote]').bind('ajax:before', function () {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>

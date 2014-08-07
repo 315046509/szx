@@ -1,0 +1,150 @@
+<%= render "comment/hear" %>
+<div class="banner"><img src="../images/taiguo/banner.jpg" width="990" height="260"></div>
+<div class="linejpg">
+  <a><img src="../images/taiguo/tgline.jpg" width="990" height="48"></a></div>
+<div class="main_box">
+  <div class="hot_line">
+    <dl class="line_l">
+      <a><img src="../images/taiguo/hot_line.jpg" width="639"></a>
+    </dl>
+    <dl class="line_r">
+      <dt>
+      <h1>【深起港止】惠旅泰国六天欢乐行（全网最低，贵一罚十）</h1></dt>
+      <dd>
+        <p class="line_t">推荐理由</p>
+
+        <p class="line_d">爆款冲量，不计成本。往返豪华航班，全程五晚精品酒店！目前位置，已经超过3000人选择这个惠旅团！真真正正完全无自费！数量有限！机会瞬息万变！</p>
+
+        <p class="hot_tel">旅游热线：<span> 0000-00000000</span></p>
+      </dd>
+      <div class="price">￥<span>1988</span></div>
+      <span class="buy"><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">热线咨询</a></span>
+    </dl>
+  </div>
+  <div class="clearfloat"></div>
+  <div class="path"><span><h2>热门线路推荐</h2></span></div>
+  <div class="main2">
+    <ul>
+      <% @hl.each do |q| %>
+          <li>
+            <%= image_tag q.avatar.url(:index) %>
+
+            <p class="line-t"><a href="/chujing/4847.html" target="_blank"><%= q.title %></a></p>
+
+            <div class="line-price">
+              <span class="price_1"><i>￥</i><%= q.price %></span>
+              <span class="price_2"><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">热线咨询</a></span>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="clearfloat"></div>
+<div class="main_box">
+  <div class="path" style="margin-top:0px;"><p>景点风情介绍</p></div>
+  <div class="introduce_box">
+    <div class="introduce_center">
+      <div class="introduce_center_left">
+        <div class="introduce_text">
+          <h2>泰国THAIlAND</h2>
+
+          <p>迪拜是阿拉伯联合酋长国人口最多的酋长国，从面积上计算是继阿布扎比之后第二大酋长国，迪拜与其他阿联酋的酋长国的不同处在于石油只占GDP的6%。大多数的收入来自杰贝阿里自由区，现在更多从旅游收入。迪拜市是阿拉伯联合酋长国最大的城市，也是中东地区的经济和金融中...</p>
+        </div>
+      </div>
+      <div class="introduce_pic">
+        <a><img src="../images/taiguo/introduce_pic.jpg" width="710" height="264"></a>
+      </div>
+    </div>
+    <div class="introduce_main">
+      <ul class="Towhere">
+
+        <li class="Towhere1">
+          <div class="Towhere_img" style="display: block;">
+            <img height="150" width="350" alt="普吉岛" src="../images/taiguo/towhere1.jpg">
+
+            <p>普吉岛---<span>幽蓝的海</span></p>
+          </div>
+          <a class="Towhere_jieshao" style="display: none;">
+            <span class="Towhere_title"></span>
+            <span class="Towhere_msg">普吉岛(Phuket Island)，泰国南部岛屿，位于泰国南部马来半岛西海岸外的安达曼海(Andaman Sea)，是泰国最大的海岛，也是泰国最小的一个府。</span>
+          </a>
+        </li>
+
+        <li class="Towhere2">
+          <div class="Towhere_img" style="display: block;">
+            <img height="305" width="283" alt="苏梅岛" src="../images/taiguo/towhere2.jpg">
+
+            <p class="Towhere_img_p1" style="top:267px; left:140px;">苏梅岛---<span>纯净自然</span></p>
+          </div>
+          <a class="Towhere_jieshao" style="display: none;">
+            <span class="Towhere_title"></span>
+            <span class="Towhere_msg">苏梅岛距曼谷南方相隔约560公里，20年前，没有游人来打搅这里茂密的椰树林和安静的小渔村。直到几个西方游客搭乘从曼谷来此运椰子的木船，苏梅岛拥有美丽海滩的消息才不胫而走...</span>
+          </a>
+        </li>
+        <li class="Towhere3">
+          <div class="Towhere_img" style="display: block;">
+            <img height="150" width="326" alt="曼谷" src="../images/taiguo/towhere3.jpg">
+
+            <p>曼谷---<span>体验水上市场</span></p>
+          </div>
+          <a class="Towhere_jieshao" style="display: none;">
+            <span class="Towhere_title"></span>
+            <span class="Towhere_msg">曼谷位于昭披耶河东岸，近暹罗湾，为泰国的首都和最大城市，为泰国政治、经济、贸易、交通、文化、科技、教育等各方面的中心。曼谷市内的水上交通极其的繁忙，使曼谷有“东方威尼斯...</span>
+          </a>
+        </li>
+        <li class="Towhere5">
+          <div class="Towhere_img J-Towhere_img" style="display: block;">
+            <img height="150" width="173" alt="芭提雅" src="../images/taiguo/towhere5.jpg">
+
+            <p>芭提雅---<span>与鱼儿相约 </span></p>
+          </div>
+          <a class="Towhere_jieshao" style="display: none;">
+            <span class="Towhere_title"></span>
+            <span class="Towhere_msg">位于曼谷南部不远的芭堤雅，素以阳光、沙滩、海鲜、人妖表演名扬世界。特别是距离芭提雅9公里处的珊瑚岛，是芭堤雅海滩外最大的岛，岛的四周有很多沙滩，沙白细棉，水清见底...</span>
+          </a>
+        </li>
+        <li class="Towhere6">
+          <div class="Towhere_img" style="display: block;">
+            <img height="150" width="173" alt="华欣" src="../images/taiguo/towhere6.jpg">
+
+            <p>华欣---<span>海天一色</span></p>
+          </div>
+          <a class="Towhere_jieshao" style="display: none;">
+            <span class="Towhere_title"></span>
+            <span class="Towhere_msg">华欣(英语：Hua Hin，泰语：หัวหิน)，泰国中部海滨小镇。是泰国最传统的海滨胜地，虽然知名度比不上帕塔亚和普吉岛等热点旅游地区，但其是泰国最早成形的一处海滨度假胜地隶属泰...</span>
+          </a>
+        </li>
+        <li class="Towhere7">
+          <div class="Towhere_img" style="display: block;">
+            <img height="150" width="326" alt="清迈" src="../images/taiguo/towhere7.jpg">
+
+            <p>清迈---<span>泰北玫瑰</span></p>
+          </div>
+          <a class="Towhere_jieshao" style="display: none;">
+            <span class="Towhere_title"></span>
+            <span class="Towhere_msg">清迈是泰国第二大城市，也是泰国北部政治、经济、文化的中心，其发达程度仅次於首都曼谷。清迈市内风景秀丽，遍植花草，尤以玫瑰花最为著名，有“北国玫瑰”的雅称。</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $(".Towhere li").bind({
+                mouseover: function () {
+                    $(this).children(".Towhere_img").hide();
+                    $(this).children(".Towhere_jieshao").show();
+
+                },
+                mouseout: function () {
+                    $(this).children(".Towhere_img").show();
+                    $(this).children(".Towhere_jieshao").hide();
+                }
+            });
+
+        });
+    </script>
+  </div>
+</div>
+<div class="clearfloat"></div>
+<%= render "comment/footer" %>

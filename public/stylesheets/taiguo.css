@@ -1,0 +1,108 @@
+
+a{text-decoration:none;color:#333333;}
+a:hover{color:#FF0000;}
+.clearfloat{clear:both;height:0;font-size:1px;line-height:0px;}
+
+.banner{height:260px;text-align:center;margin:0 auto;overflow:hidden;margin-top: 10px;}
+.linejpg{height:48px;text-align:center;margin:19px auto;overflow:hidden;}
+.main_box{width:990px;overflow:auto;margin:0 auto;font-family: "微软雅黑";}
+.hot_line{height: 342px}
+.hot_line .line_l{width:639px;float: left;}
+.hot_line .line_r{width:333px;float: right;}
+.hot_line .line_r h1{font-size:23px;padding: 15px 0;}
+.hot_line .line_r .line_t{font-size: 14px; color: #398200;}
+.line_d{padding-top:10px;font-size: 13px;color:#666;}
+.hot_tel{padding-top: 20px;color:#ff4804;font-weight:bold; border-bottom: 1px solid #CCCCCC;}
+.hot_tel span{font-size: 21px;}
+.hot_line .line_r .price{height: 85px;color: #ed0748;font-weight: bolder;font-size: 25px;line-height: 85px;float: left;}
+.hot_line .line_r .price span{font-size: 60px;} 
+.hot_line .line_r .buy { float: right;margin-top: 25px;}
+.hot_line .line_r .buy a{background-color: #ED0748;color: #FFFFFF;display: block;font-size: 24px;padding: 5px 10px;text-align: center;width: 123px;}
+.path{width:990px;margin:0 auto;margin-top:20px;height:48px;background:url(../images/tuijian.jpg) no-repeat;line-height: 48px;text-indent: 55px;font-size: 26px;color: #fff;}
+.path p{float: left;}
+.path span{float: right;font-size: 14px;color: #666;}
+
+.main2{margin-bottom:22px;font-family: "微软雅黑";margin-top: 10px;overflow: hidden;}
+.main2_txt{color:#a2528f;font-weight:bold;}
+.main2 ul li{width:322px;height:325px;float:left;position:relative;color:#333333;display:inline; border: 1px solid #ccc;margin-right: 6px;margin-bottom: 20px; }
+.main2 .line-t{padding: 0 10px;font-size: 18px}
+.main2 .line-price{color:#ed0748; }
+.main2 .line-price .price_1{font-size: 34px;font-weight: bold;margin-left: 5px;float: left;}
+.main2 .line-price .price_1 i{font-size: 21px;font-style:normal;}
+.main2 .line-price .price_2{width: 79px;height: 26px;background-color:#ed0748;float: right;margin-top: 15px;margin-right: 10px;text-align: center;line-height: 26px;}
+.main2 .line-price .price_2 a{color:#fff;font-weight: bold;padding: 5px;font-size: 16px;}
+
+
+.path2{width:961px;margin:0 auto;margin-top:6px;height:48px;background:url(../images/path2.gif) no-repeat;}
+.path2 div{margin-top:22px;margin-right:20px;float:right;width:96px;height:18px;}
+.path2 a{font-size:17px;color:#a2528f;}
+.path2 a:hover{color:#ff810c;}
+.hotel_top{height:22px;background:url(../images/hotel.gif) no-repeat;padding:12px 0 0 812px;}
+.hotel_top div{width:84px;height:22px;}
+.hotel_top div a{color:#5e4c2b;font-weight:bold;}
+.hotel_box{border:2px solid #ffc5a0;height:500px;padding:16px 26px 0 14px;margin-bottom:30px;}
+.hotel_main{margin-bottom:28px;height:132px;}
+.hotel_main_pic{width:196px;float:left;}
+.hotel_main_text{float:left;width:536px;}
+.hotel_main_text h1{font-size:14px;color:#005bb5;}
+.hotel_main_text h2{color:#ff6600;font-size:12px;font-weight:normal;}
+.hotel_main_text h3{color:#999999;font-size:12px;font-weight:normal;}
+.hotel_main_view{line-height:30px;font-size:12px;color:#666666;width:107px;height:94px;float:right;}
+.hotel_main_view strong{color:#ff6600;font-size:20px;}
+.hotel_main_view strong a{font-size:14px;}
+.introduce_top{height:38px;}
+.introduce_box{padding:10px;border:1px solid #dabad2;}
+.introduce_center{height:263px;}
+.introduce_center_left{background:#f4f4f3;width:254px;height:262px;float:left;}
+.introduce_text{width:225px;padding-top:20px;font-size:12px;color:#4d463b;background:#f4f4f3;padding-left:14px;padding-right:14px;}
+.introduce_text h2{color:#4d463b;text-align:center;}
+.introduce_text p{ line-height: 22px;font-size: 15px;}
+.introduce_pic{float:right;width:710px;position:relative;}
+.introduce_pic_p{width:140px;height:28px;background:#614438;position:absolute;top:221px;left:484px;text-align:center;color:#FFFFFF;line-height:28px;filter:alpha(Opacity=60);-moz-opacity:0.6;opacity:0.6;font-weight:bold;}
+.introduce_pic_p a:hover{color:#993333;}
+.introduce_main{height:304px;}
+.Towhere{height:304px;margin-top:4px;position:relative;}
+.Towhere li{overflow:hidden;position:absolute;}
+.Towhere li .Towhere_img{cursor:pointer;position:relative;}
+.Towhere li .Towhere_img p{bottom:-130px;background:none;display:block;color:#FFFFFF;font-size:14px;font-weight:bold;height:27px;line-height:27px;padding:0 8px;position:absolute;right:-4px;top: 113px;}
+.Towhere li .Towhere_img p span{font-size:12px;font-weight:100;}
+.Towhere li .Towhere_img_p1{bottom:-130px;background:url("../images/fx_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);display:block;color:#FFFFFF;font-size:14px;font-weight:bold;height:27px;line-height:27px;padding:0 8px;position:absolute;right:2px;top: 114px;}
+.Towhere1{height:150px;width:350px;}
+.Towhere_jieshao{background:none repeat scroll 0 0 #008CD6;color:#FFFFFF;display:none;padding-left:20px;display:block;}
+.Towhere_jieshao span{display:block;}
+.Towhere_jieshao:hover, .Towhere_jieshao:visited, .Towhere_jieshao:active{color:#FFFFFF;}
+.Towhere7{height:150px;left:642px;top:152px;width:326px;}
+.Towhere2{height:302px;left:355px;top:0;width:282px;}
+.Towhere3{height:148px;left:642px;top:0px;width:326px;}
+.Towhere4{height:148px;left:817px;top:0;width:173px;}
+.Towhere5{height:148px;top:154px;width:173px;}
+.Towhere6{height:148px;left:177px;top:154px;width:173px;}
+.Towhere_jieshao{background:none repeat scroll 0 0 #008CD6;color:#FFFFFF;display:none;height:148px;padding-left:20px;width:225px;display:block;}
+.Towhere_jieshao span{display:block;}
+.Towhere_jieshao:hover, .Towhere_jieshao:visited, .Towhere_jieshao:active{color:#FFFFFF;}
+.Towhere1 .Towhere_jieshao, .Towhere_jieshao{height:150px;width:330px;}
+.Towhere2 .Towhere_jieshao{height:302px;width:262px;}
+.Towhere_title{font-size:16px;font-weight:bold;}
+.Towhere1 .Towhere_title, .Towhere7 .Towhere_title{padding:20px 0 10px;}
+.Towhere1 .Towhere_msg, .Towhere7 .Towhere_msg{width:305px;}
+.Towhere_msg{line-height:1.4;}
+.Towhere_price{padding-top:10px;text-align:right;}
+.Towhere_price span{color:#FFF000;display:inline;font-size:22px;line-height:1;}
+.Towhere_price i, .Towhere_more{font-style:normal;margin:0 15px;text-decoration:underline;}
+.Towhere2 .Towhere_title{padding:50px 0 10px;}
+.Towhere2 .Towhere_price{margin-right:15px;padding:25px 0 75px;}
+.Towhere2 .Towhere_msg{width:250px;}
+.Towhere_more{bottom:10px;position:absolute;right:0;text-align:right;}
+.Towhere3 .Towhere_price, .Towhere4 .Towhere_price, .Towhere5 .Towhere_price, .Towhere6 .Towhere_price{margin-bottom:50px;padding-top:5px;text-align:left;}
+.Towhere3 .Towhere_title, .Towhere4 .Towhere_title, .Towhere5 .Towhere_title, .Towhere6 .Towhere_title{padding:20px 0 0;}
+.Towhere7 .Towhere_jieshao{width:326px;}
+/*towhere p*/
+.foot{height: 36px;width: 872px;margin: 0px auto;}
+.foot_nav{height: 40px;margin-bottom: 18px;}
+.foot_nav_txt{width: 600px;margin: 0 auto;}
+.foot_nav_txt ul li{width: 70px;float: left;text-align: center;height: 40px;line-height: 40px;margin-left: 4px;}
+.foot_nav_txt li a{font-size: 14px;color: #6e1100;}
+.foot_nav_txt li a:hover{color: #000;}
+.footer_a{color: #057ffa;}
+.copyright{color: #000;font-size: 14px;text-align: center;line-height: 28px;}
+.copyright a{font-size: 18px;}

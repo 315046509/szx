@@ -1,0 +1,250 @@
+<script>
+    <% if flash[:error_msg]%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+<div class="login">
+  <div class="login_top cfix">
+    <div class="fn-right">
+      <div class="login_tel"></div>
+    </div>
+
+    <div class="fn-left">
+      <a href="/">
+        <div class="reg_logo"></div>
+      </a>
+    </div>
+  </div>
+
+  <h1 class="reg_title"></h1>
+
+  <div id="login_border" class="cfix">
+    <%= form_for(@member, :url => user_create_main_index_path, :method => "post", :html => {:id => "formReg"}) do |f| %>
+        <ul id="login_l">
+
+          <li>
+            <span><em>*</em>用户昵称:</span>
+            <input name="member[name]" id="name" type="text" class="inputa" maxlength="6">
+            <img src="../images/no1.gif" width="16" height="16" id="nameIco" style="display:none;">
+
+            <div id="nameMsg">请填写昵称</div>
+          </li>
+
+          <li>
+            <span><em>*</em>手机号码:</span>
+            <input name="member[mobile]" id="mobile" type="text" class="inputa" maxlength="11">
+            <img src="../images/no1.gif" width="16" height="16" id="moblieIco" style="display:none;">
+
+            <div id="mobileMsg">请填写有效手机号码</div>
+          </li>
+          <li>
+            <span><em>*</em>常用邮箱:</span>
+            <input name="member[email]" id="email" type="text" class="inputa" maxlength="50">
+            <img src="../images/no1.gif" width="16" height="16" id="emailIco" style="display:none;">
+
+            <div id="emailMsg">请输入有效的邮件地址</div>
+          </li>
+          <li>
+            <span><em>*</em>登陆密码:</span>
+            <input name="member[passwd]" id="passwd" type="password" class="inputa" maxlength="14">
+            <img src="../images/no1.gif" width="16" height="16" id="passwdIco" style="display:none;">
+
+            <div id="passwdMsg">请输入6-16位密码</div>
+          </li>
+          <li>
+            <span><em>*</em>确认密码密码:</span>
+            <input name="passwdag" id="passwdag" type="password" class="inputa" maxlength="14">
+            <img src="../images/no1.gif" width="16" height="16" id="passwdagIco" style="display:none;">
+
+            <div id="passwdagMsg">请您再一次输入密码</div>
+          </li>
+          <li>
+            <div style="padding-top:10px;">
+              <input name="agree" id="agree" type="checkbox" value="1">
+              我已阅读并接受海外旅行社官方网站<a href="#" target="_blank" style="text-decoration:underline; color:#22ade6;">用户协议</a>
+              <br><br>
+              <input type="image" src="../images/reg_sub.png" width="168" height="38">
+            </div>
+          </li>
+        </ul>
+    <% end %>
+    <div id="login_r" style="font-size:12px;">
+      <strong>为什么要注册会员?</strong>
+      <br>1. 以便我们更好的为您服务
+      <br><span>2. 会员参加旅游，可以获得更多优惠。</span>
+
+      <img src="../images/reg_img1.jpg" height="251" width="193" style="display:block; margin-top:20px;">
+    </div>
+  </div>
+</div>
+<%= render "comment/footer" %>
+
+<script language="javascript">
+
+    $(function () {
+        $("#login_l .inputa").focus(function () {
+            $(this).addClass("on_focus");
+        }).blur(function () {
+            $(this).removeClass("on_focus");
+        });
+
+        $("#name").bind({
+            blur: function () {
+                if (($(this).val()) == false) {
+                    $(this).parent().find("#nameMsg").html("请输入昵称").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else {
+                    $(this).parent().find("#nameMsg").html("OK").css("color", "#999");
+                    $(this).next().show().attr("src", "../images/yes1.gif");
+                }
+            }
+        });
+
+        $("#mobile").bind({
+            blur: function () {
+                if (egrMobileCheck($(this).val()) == false) {
+                    $(this).parent().find("#mobileMsg").html("请正确输入您的手机号码!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else {
+                    $(this).parent().find("#mobileMsg").html("OK").css("color", "#999");
+                    $(this).next().show().attr("src", "../images/yes1.gif");
+                }
+            }
+        });
+
+        $("#email").bind({
+            blur: function () {
+                if (checkMail($(this).val()) == false) {
+                    $(this).parent().find("#emailMsg").html("请输入正确的邮箱!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else {
+                    $(this).parent().find("#emailMsg").html("OK").css("color", "#999");
+                    $(this).next().show().attr("src", "../images/yes1.gif");
+                }
+            }
+        });
+
+        $("#passwd").bind({
+            blur: function () {
+                if ($(this).val().length < 6 || $(this).val().length > 16) {
+                    $(this).parent().find("#passwdMsg").html("请输入6-16位密码!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else {
+                    $(this).parent().find("#passwdMsg").html("OK").css("color", "#999");
+                    $(this).next().show().attr("src", "../images/yes1.gif");
+                }
+            }
+        });
+
+        $("#passwdag").bind({
+            blur: function () {
+                if ($(this).val() != $("#passwd").val()) {
+                    $(this).parent().find("#passwdagMsg").html("2次密码不一致!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else if ($(this).val().length < 6 || $(this).val().length > 16) {
+                    $(this).parent().find("#passwdagMsg").html("请输入6-16位密码!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else {
+                    $(this).parent().find("#passwdagMsg").html("OK").css("color", "#999");
+                    $(this).next().show().attr("src", "../images/yes1.gif");
+                }
+            }
+        });
+
+
+        $("#formReg").submit(function () {
+            if (($("#name").val()) == false) {
+                $("#name").parent().find("#nameMsg").html("请正确输入昵称!").css("color", "#f80426");
+                $("#name").next().show().attr("src", "../images/no1.gif");
+                return false;
+            }
+            if (egrMobileCheck($("#mobile").val()) == false) {
+                $("#mobile").parent().find("#mobileMsg").html("请正确输入您的手机号码!").css("color", "#f80426");
+                $("#mobile").next().show().attr("src", "../images/no1.gif");
+                return false;
+            }
+            if (checkMail($("#email").val()) == false) {
+                $("#email").parent().find("#emailMsg").html("请输入正确的邮箱!").css("color", "#f80426");
+                $("#email").next().show().attr("src", "../images/no1.gif");
+
+                return false;
+            }
+            if ($("#passwd").val().length < 6 || $("#passwd").val().length > 16) {
+                $(this).parent().find("#passwdMsg").html("请输入6-16位密码!").css("color", "#f80426");
+                $(this).next().show().attr("src", "../images/no1.gif");
+
+                return false;
+            }
+            if ($("#passwdag").val() != $("#passwd").val()) {
+                $(this).parent().find("#passwdagMsg").html("2次密码不一致!").css("color", "#f80426");
+                $(this).next().show().attr("src", "../images/no1.gif");
+
+                return false;
+            }
+            if ($("#agree").attr("checked") != "checked") {
+                alert("请先阅读并同意用户协议!");
+                return false;
+            }
+
+        });
+    });
+    var returnFuc = function (text) {
+        if (text == "1") {
+            $("#mobile").parent().find("#mobileMsg").html("此手机号已被注册!").css("color", "#f80426");
+            $("#mobile").next().show().attr("src", "../images/no1.gif");
+
+            return false;
+        } else {
+            $("#mobile").parent().find("#mobileMsg").html("可以使用").css("color", "#999");
+            $("#mobile").next().show().attr("src", "../images/yes1.gif");
+
+            return true;
+        }
+    }
+
+    axjaReturnFuc = function (value) {
+    }
+    axajSend = function (_url, _method, _send, returnFuc) {
+        if (!returnFuc)
+            returnFuc = axjaReturnFuc;
+        var xmlHttpObj;
+        if (window.ActiveXObject) {
+            xmlHttpObj = new ActiveXObject("Microsoft.XMLHTTP");
+        } else if (window.XMLHttpRequest) {
+            xmlHttpObj = new XMLHttpRequest();
+        }
+        try {
+            xmlHttpObj.onreadystatechange = function () {
+                if (xmlHttpObj.readyState == 4) {
+                    if (xmlHttpObj.status == 200) {
+                        returnFuc(xmlHttpObj.responseText);
+                    }
+                }
+            };
+            xmlHttpObj.open(_method, _url, true);
+            xmlHttpObj.send(_send);
+        } catch (exception) {
+            alert("xmlHttp Fail");
+        }
+        return;
+    }
+
+
+    /* 手机校验 */
+    function egrMobileCheck(in_mobile) {
+        var reg = new RegExp(/^1[2,3,4,5,7,8]\d{9}$/ig);
+        if (!reg.test(in_mobile)) {
+            return false;
+        }
+        return true;
+    }
+
+    /* 邮件校验 */
+    function checkMail(in_email) {
+        reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        if (!(reg.test(in_email))) {
+            return false;
+        }
+        return true;
+    }
+</script>

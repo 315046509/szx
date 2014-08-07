@@ -1,0 +1,117 @@
+
+.noinfo P{
+   height: 32px;
+}
+.success P IMG{
+   width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+.noinfo P IMG{
+   width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+.success P SPAN{
+   text-align: left;
+    line-height: 32px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.noinfo P SPAN{
+   text-align: left;
+    line-height: 32px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.pages-flip{
+   text-align: center;
+    padding-bottom: 3px;
+    margin: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 12px;
+    padding-top: 3px;
+}
+.pages-flip A{
+   border-bottom: #fff 1px solid;
+    border-left: #fff 1px solid;
+    padding-bottom: 2px;
+    margin: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #000099;
+    font-size: 12px;
+    border-top: #fff 1px solid;
+    border-right: #fff 1px solid;
+    text-decoration: underline;
+    padding-top: 2px;
+}
+.pages-flip A:hover{
+   border-bottom: #000099 1px solid;
+    border-left: #000099 1px solid;
+    color: #000;
+    font-size: 12px;
+    border-top: #000099 1px solid;
+    border-right: #000099 1px solid;
+}
+.pages-flip A:active{
+   border-bottom: #000099 1px solid;
+    border-left: #000099 1px solid;
+    color: #f00;
+    font-size: 12px;
+    border-top: #000099 1px solid;
+    border-right: #000099 1px solid;
+}
+.pages-flip A.current{
+   border-bottom: #fff 1px solid;
+    border-left: #fff 1px solid;
+    padding-bottom: 2px;
+    background-color: #fff;
+    margin: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #000;
+    border-top: #fff 1px solid;
+    font-weight: bold;
+    border-right: #fff 1px solid;
+    padding-top: 2px;
+}
+.pages-flip SPAN.disabled{
+   border-bottom: #eee 1px solid;
+    border-left: #eee 1px solid;
+    padding-bottom: 2px;
+    margin: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #ddd;
+    border-top: #eee 1px solid;
+    border-right: #eee 1px solid;
+    padding-top: 2px;
+}
+.dialog-waiting{
+   background-image: url(../images/loading.gif);
+    text-align: center;
+    margin: 15px auto 0px;
+    width: 160px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 20px;
+}
+.border_00{
+   position: relative;
+    text-align: left;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    width: 100%;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+.FrontNews_list01-d1_c1_01{
+   text-align: left;
+    margin: 0px auto;
+    width: 90%;
+    clear: both;
+}
